@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    list-style: none;
+}
+
+/*Aqui va el encabezado*/
+#logo {
+    width: 150px;
+    height: 55px;
+    margin-left: 2%;
+}
+
+header {
+    background-color: #306BB3;
+    height: 10vh;
+    /*100% de la pantalla en lo alto*/
+    width: 99vw;
+    /*100% de la pantalla en lo ancho*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    /*Separación entre el boton y el menú horizontal del encabezado*/
+    gap: 100px;
+    align-items: center;
+}
+
+.Lista1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    margin-right: 10%;
+    color: #306BB3;
+    width: 82px;
+    height: 38px;
+    left: 1295px;
+    top: 31px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 5px;
+}
+
+/*Aqui va el cuadro del medio*/
+#Titulo3 {
+    font-weight: 500;
+    font-size: 48px;
+    color: #486284;
+    text-align: center;
+    margin-top: 7%;
+}
+
+#Texto5 {
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    margin-right: 32%;
+    margin-left: 30%;
+    text-align: center;
+    color: #1A202C;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    margin-block-end: 5%;
+    margin-top: 5%;
+}
+
+#Imagen2 {
+    margin-left: 7%;
+    margin-right: 2%;
+
+}
+
+#Texto6 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #1A202C;
+    text-align: left;
+    margin-right: 7%;
+}
+
+/*Aqui va el cuadro de abajo*/
+footer {
+    background-color: #306BB3;
+    height: 50vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    gap: 10%;
+}
+
+#Parte1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+    margin-top: 50px;
+}
+
+#logo2 {
+    width: 150px;
+    height: 55px;
+    left: 56px;
+    top: 68px;
+    margin-left: 5%;
+}
+
+#Texto3 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-right: 40%;
+    margin-left: 5%;
+}
+
+#Redes {
+    width: 33.6px;
+    height: 33.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50%;
+    margin-right: 40%;
+    margin-left: 10%;
+    color: white;
+}
+
+.About {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -130%;
+}
+
+.Community {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -170%;
+}
+
+.Socials {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -170%;
+}

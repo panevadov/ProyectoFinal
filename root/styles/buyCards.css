@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    list-style: none;
+}
+
+/*Aqui va el encabezado*/
+#logo {
+    width: 150px;
+    height: 55px;
+    margin-left: 2%;
+}
+
+header {
+    background-color: #306BB3;
+    height: 10vh;
+    /*100% de la pantalla en lo alto*/
+    width: 99vw;
+    /*100% de la pantalla en lo ancho*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    /*Separación entre el boton y el menú horizontal del encabezado*/
+    gap: 100px;
+    align-items: center;
+}
+
+.Lista1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    margin-right: 10%;
+    color: #306BB3;
+    width: 82px;
+    height: 38px;
+    left: 1295px;
+    top: 31px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 5px;
+}
+
+/*Aqui va el cuadro del medio*/
+#Titulo2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 150%;
+    color: #486284;
+    text-align: center;
+    margin-top: 7%;
+}
+
+#Texto4 {
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #1A202C;
+}
+
+.SeleccionarTipo {
+    margin: 30px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #90A3BF;
+}
+
+.SeleccionarTipo>div {
+    width: 25%;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*Este espacea las tarjetas en todo el espacio con la misma distancia*/
+    gap: 30px;
+    margin: 5%;
+}
+
+.TarjetaIndividual {
+    background-color: #DEE5ED;
+    width: calc(90% / 4);
+    height: 400px;
+    padding: 2%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.TarjetaIndividual>div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+}
+
+.TarjetaIndividual>div>p {
+    color: #1A202C;
+    font-weight: bolder;
+}
+
+.TarjetaIndividual>picture {
+    width: 100%;
+    height: 75%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.BotonCompra {
+    width: 45%;
+    height: 100%;
+    background: #306BB3;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+}
+
+#Siguiente {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    background: #306BB3;
+    width: 156px;
+    height: 44px;
+    border-radius: 4px;
+    align-items: center;
+    margin-left: 45%;
+    margin-block-end: 5%;
+
+}
+
+
+
+
+
+
+/*Aqui va el cuadro de abajo*/
+footer {
+    background-color: #306BB3;
+    height: 50vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+    gap: 10%;
+}
+
+#Parte1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+    margin-top: 50px;
+}
+
+#logo2 {
+    width: 150px;
+    height: 55px;
+    left: 56px;
+    top: 68px;
+    margin-left: 5%;
+}
+
+#Texto3 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-right: 40%;
+    margin-left: 5%;
+}
+
+#Redes {
+    width: 33.6px;
+    height: 33.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50%;
+    margin-right: 40%;
+    margin-left: 10%;
+    color: white;
+}
+
+.About {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -130%;
+}
+
+.Community {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -170%;
+}
+
+.Socials {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 60px;
+    margin-left: -170%;
+}
