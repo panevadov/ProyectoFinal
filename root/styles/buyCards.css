@@ -147,7 +147,7 @@ button {
     border: none;
 }
 
-#Siguiente {
+.Siguiente {
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -1,15 +1,15 @@
 const containerCharacters = document.querySelector(".ContainerCards");
 const tarjetaCompleta = document.querySelector(".tarjetaCompleta");
 const moreCards = document.querySelector(".moreCardsButton");
-//const numberCards =document.querySelector('.number');
+const moreCardsButton =document.querySelector('.Siguiente');
+
 
 
 let url = 'https://pokeapi.co/api/v2/pokemon';
 let template = "";
 let initial = 0;
 let loadCards = 16;
-let number = 16;
-//numberCards.textContent=`${number} cards`;
+let number;
 
 let pokemones = [];
 
@@ -79,13 +79,23 @@ const loadCharacters = async () => {
 
 loadCharacters();
 
-moreCards.addEventListener("click", (event) =>{
-    initial += 16;
-    number += 16;
-    showFirstLoad();
-    //numberCards.textContent=`${number} cards`;
+// const loadMoreCards = () => {
+//     initial += loadCards;
+//     const limitLoadMoreCards = initial + loadCards;  
+//     //showFilteredCards(limitLoadMoreCards);
+// };
+
+// loadCharacters();
+
+// const Siguiente = document.querySelector(".Siguiente") //Capturo el boton del html
+// Siguiente.addEventListener("click", loadMoreCards);
+
+moreCardsButton.addEventListener('click', (event) =>{
+    initial += loadCards;
+    //loadCharacters();
     event.preventDefault();
-});
+})
+
 
 
 
