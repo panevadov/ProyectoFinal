@@ -62,9 +62,9 @@ button {
 #Titulo3 {
     font-weight: 500;
     font-size: 48px;
-    color: #486284;
     text-align: center;
     margin-top: 7%;
+    font-weight: bold;
 }
 
 #Texto5 {
@@ -76,7 +76,6 @@ button {
     margin-right: 32%;
     margin-left: 30%;
     text-align: center;
-    color: #1A202C;
 }
 
 section {
@@ -101,7 +100,6 @@ section {
     line-height: 150%;
     display: flex;
     align-items: center;
-    color: #1A202C;
     text-align: left;
     margin-right: 7%;
 }

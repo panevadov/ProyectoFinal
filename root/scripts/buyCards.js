@@ -1,35 +1,38 @@
 const containerCharacters = document.querySelector(".ContainerCards");
-const moreCards = document.querySelector(".moreCards");
-let tarjetaCompleta = document.querySelector(".tarjetaCompleta");
+const tarjetaCompleta = document.querySelector(".tarjetaCompleta");
+const moreCards = document.querySelector(".moreCardsButton");
+//const numberCards =document.querySelector('.number');
 
 
 let url = 'https://pokeapi.co/api/v2/pokemon';
 let template = "";
 let initial = 0;
-let loadCards = 10;
-let firstLoad = 10;
+let loadCards = 16;
+let number = 16;
+//numberCards.textContent=`${number} cards`;
 
 let pokemones = [];
 
+//Crea la carta
 const showFirstLoad = (pokemones) => {
     pokemones.forEach(async (pokemon) => {
         let Carta = document.createElement("div")
         Carta.className = "TarjetaIndividual";
-        Carta.innerHTML =
-            `
+        Carta.innerHTML = `
                 <div>
                     <p>${pokemon.name}</p>
                     <i class="fa-sharp fa-regular fa-heart"></i>
                 </div>
-                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></img>
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="ImagenPokemon"></img>
                 <div>
-                    <p><b>${pokemon.base_experience} Exp</b></p>
+                    <p><b>Exp ${pokemon.base_experience} </b></p>
                     <button>Buy</button>
                 </div>
             `;
+            containerCharacters.appendChild(Carta); //El div de Carta se pone al contenedor de caracteres
     });
 
-    containerCharacters.appendChild(Carta); //El div de Carta se pone al contenedor de caracteres
+    
 }
 
 //Carga la información para la tarjeta
@@ -70,19 +73,19 @@ const loadCharacters = async () => {
         showFirstLoad(pokemones.slice(initial, loadCards));
 
     } catch (err) {
-        //console.log(err);
         console.log(err)
-        //containerCharacters.innerHTML = `<p> Error ${err.status}:${message}</p>`;
     }
-
-    //return(data) 
 }
 
 loadCharacters();
 
+moreCards.addEventListener("click", (event) =>{
+    initial += 16;
+    number += 16;
+    showFirstLoad();
+    //numberCards.textContent=`${number} cards`;
+    event.preventDefault();
+});
 
-
-
-//showFirstLoad();
 
 
