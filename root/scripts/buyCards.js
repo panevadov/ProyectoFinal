@@ -26,7 +26,7 @@ const showFirstLoad = (pokemones) => {
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="ImagenPokemon"></img>
                 <div>
                     <p><b>Exp ${pokemon.base_experience} </b></p>
-                    <button>Buy</button>
+                    <button class="BotonCompra">Buy</button>
                 </div>
             `;
             containerCharacters.appendChild(Carta); //El div de Carta se pone al contenedor de caracteres
@@ -78,17 +78,6 @@ const loadCharacters = async () => {
 }
 
 loadCharacters();
-
-// const loadMoreCards = () => {
-//     initial += loadCards;
-//     const limitLoadMoreCards = initial + loadCards;  
-//     //showFilteredCards(limitLoadMoreCards);
-// };
-
-// loadCharacters();
-
-// const Siguiente = document.querySelector(".Siguiente") //Capturo el boton del html
-// Siguiente.addEventListener("click", loadMoreCards);
 
 moreCardsButton.addEventListener('click', (event) =>{
     initial += loadCards;
