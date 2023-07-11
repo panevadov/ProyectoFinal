@@ -1,7 +1,8 @@
 const containerCharacters = document.querySelector(".ContainerCards");
 const tarjetaCompleta = document.querySelector(".tarjetaCompleta");
-const moreCards = document.querySelector(".moreCardsButton");
-const moreCardsButton =document.querySelector('.Siguiente');
+//const moreCards = document.querySelector(".moreCardsButton");
+//const moreCardsButton =document.querySelector('.Siguiente')
+
 
 
 
@@ -9,7 +10,6 @@ let url = 'https://pokeapi.co/api/v2/pokemon';
 let template = "";
 let initial = 0;
 let loadCards = 16;
-let number;
 
 let pokemones = [];
 
@@ -79,11 +79,12 @@ const loadCharacters = async () => {
 
 loadCharacters();
 
-moreCardsButton.addEventListener('click', (event) =>{
-    initial += loadCards;
-    //loadCharacters();
-    event.preventDefault();
-})
+//Para conteo de cartas
+const numberCards =document.querySelector('.number');  //capturo la parte del conteo
+numberCards.textContent= `${pokemones.length} Cards`;  //muestro las cartas que se están mostrando en el momento
+
+//Para mostrar más cartas
+
 
 
 

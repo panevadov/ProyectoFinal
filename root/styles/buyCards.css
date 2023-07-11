@@ -46,6 +46,19 @@ a {
     text-decoration: none;
 }
 
+.more-cards-info{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-right: 30%;
+    gap: 30px;
+    align-items: center;
+    /* align-self: flex-end; */
+    /* width: 50%;
+    align-items: center;
+    margin-right: 7vw; */
+}
+
 button {
     margin-right: 10%;
     color: #306BB3;
@@ -100,8 +113,6 @@ button {
     margin: 5%;
 }
 
-
-
 .TarjetaIndividual {    /*Se hace el diseño como tal de la tarjeta*/
     background-color: #DEE5ED;
     width: calc(90% / 4);
@@ -154,13 +165,6 @@ button {
     
 }
 
-/* .TarjetaInferior{
-    display: flex;
-    flex-direction: row;
-    row-gap: 90px;   
-    
-} */
-
 .Siguiente {
     display: flex;
     flex-direction: row;
@@ -174,6 +178,12 @@ button {
     margin-left: 45%;
     margin-block-end: 5%;
 
+}
+
+.number{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
 }
 
 
