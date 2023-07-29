@@ -39,47 +39,48 @@ const showFirstLoad = (pokemones) => {
 }
 
 //Carga la información para la tarjeta
-const loadCharacters = async (actualPosition = initial, limit = loadCards) => {
+const loadCharacters = async (actualPosition = initial, limit = loadCards, firstLoad = true) => {
 
     try {
+        
+        if(firstLoad) {
+            localStorage.setItem("pokemones", JSON.stringify([]));
+        }
         pokemones = localStorage.getItem("pokemones");
 
-        //if (!pokemones) {
-            //const res = await fetch(url);
-            const res = await fetch(url + '?offset='+actualPosition+'&limit='+limit);
-            const data = await res.json();
+        //Se crean las posiciones desde las cuales se va a cargar la pagina
+        const res = await fetch(url + '?offset='+actualPosition+'&limit='+limit);
+        const data = await res.json();
 
-            const pokemonData = await Promise.all(
-                //Recorrido para extraer la información
-                data.results.map(async (pokemon) => {
-                    const urlPokemon = await fetch(pokemon.url);
-                    return urlPokemon.json();
-                })
-            );
+        const pokemonData = await Promise.all(
+            //Recorrido para extraer la información
+            data.results.map(async (pokemon) => {
+                const urlPokemon = await fetch(pokemon.url);
+                return urlPokemon.json();
+            })
+        );
 
-            //Se almacena la información (nombre, tipo, experiencia y sprites) de pokemonData en pokemones
-            pokemones = pokemonData.map((pokemon) => ({
-                    name: pokemon.name,
-                    sprites: pokemon.sprites,
-                    types: [],
-                    base_experience: pokemon.base_experience,
-                    id: pokemon.id,
-                })
-            );
-            
-            let misPokemones = localStorage.getItem("pokemones");
-            if (!misPokemones) {
-                misPokemones = [];
-            } else {
-                misPokemones = JSON.parse(misPokemones);
-            }
-            const newPokemones = misPokemones.concat(pokemones);
+        //Se almacena la información (nombre, tipo, experiencia y sprites) de pokemonData en pokemones
+        pokemones = pokemonData.map((pokemon) => ({
+                name: pokemon.name,
+                sprites: pokemon.sprites,
+                types: [],
+                base_experience: pokemon.base_experience,
+                id: pokemon.id,
+            })
+        );
+        
+        //Se almacena la información del local storage en una nueva variable para hacer concatenación 
+        let misPokemones = localStorage.getItem("pokemones");
+        if (!misPokemones) {
+            misPokemones = [];
+        } else {
+            misPokemones = JSON.parse(misPokemones);
+        }
+        const newPokemones = misPokemones.concat(pokemones);
 
-            //Se convierte en información local
-            localStorage.setItem("pokemones", JSON.stringify(newPokemones));
-        // } else {
-        //     pokemones = JSON.parse(pokemones);
-        // }
+        //Se convierte en información local
+        localStorage.setItem("pokemones", JSON.stringify(newPokemones));
 
         showFirstLoad(pokemones.slice(initial, loadCards));
 
@@ -91,12 +92,15 @@ const loadCharacters = async (actualPosition = initial, limit = loadCards) => {
 loadCharacters();
 
 
-//Para mostrar más cartas
+//Para mostrar más cartas, se capturan cartas, se convierten los strings en objetos
 const siguiente = document.querySelector(".Siguiente");
 siguiente.addEventListener("click", function(){
     const misPokemones = JSON.parse(localStorage.getItem("pokemones"));
-    loadCharacters(misPokemones.length, loadCards);
+    loadCharacters(misPokemones.length, loadCards, false);
 });
+
+//Para filtrar 
+
 
 
 
