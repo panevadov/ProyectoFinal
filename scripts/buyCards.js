@@ -61,10 +61,11 @@ const loadCharacters = async (actualPosition = initial, limit = loadCards, first
         );
 
         //Se almacena la información (nombre, tipo, experiencia y sprites) de pokemonData en pokemones
+        console.log(pokemonData);
         pokemones = pokemonData.map((pokemon) => ({
                 name: pokemon.name,
                 sprites: pokemon.sprites,
-                types: [],
+                types: pokemon.types.map(objeto => objeto.type.name),
                 base_experience: pokemon.base_experience,
                 id: pokemon.id,
             })
@@ -100,6 +101,44 @@ siguiente.addEventListener("click", function(){
 });
 
 //Para filtrar 
+
+async function seleccionFiltro(type){
+    //Obtengo los pokemones de la localstorage
+    let misPokemones = localStorage.getItem("pokemones");
+    if (!misPokemones) {
+        misPokemones = [];
+    } else {
+        misPokemones = JSON.parse(misPokemones);
+    }
+
+    //Limpio html
+    containerCharacters.innerHTML = ''
+    
+    // Filtro dependiendo el tipo
+    switch(type){
+        case 'All':
+            console.log('Soy All');
+            await loadCharacters();
+        break;
+        case 'Air':
+            //Filtro el tipo
+            const filterTwo = await pokemones.filter(pokemones => pokemones.types.includes('flying'));
+            //Refresco localstorage
+            localStorage.setItem("pokemones", JSON.stringify(filterTwo));
+            //Refresco HTML
+            await showFirstLoad(filterTwo);
+
+        break;
+        case 'Fire':
+            console.log('Soy Fire')
+        break;
+        case 'Water':
+            console.log('Soy Water')
+        break;
+        
+    }
+
+}
 
 
 
