@@ -12,4 +12,9 @@ dark_mode.a{
   color: white;
 }
 
+.darkMode.dark_mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
 

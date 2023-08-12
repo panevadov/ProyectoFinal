@@ -10,12 +10,13 @@ darkMode.addEventListener("click", function(){
 
     theme = "Dark";
     darkMode.textContent = "Light mode";
+    darkMode.classList.add("dark_mode");
 
   } else{
 
     theme = "Light";
     darkMode.textContent = "Dark mode";
-
+    darkMode.classList.remove("dark_mode");
   }
 
   //Guardar en el localStorage

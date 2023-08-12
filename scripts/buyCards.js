@@ -32,7 +32,6 @@ const showFirstLoad = (pokemones) => {
         let misPokemones = JSON.parse(localStorage.getItem("pokemones"));
         const numberCards =document.querySelector('.number');  //capturo la parte del conteo
         numberCards.textContent= `${misPokemones.length} Cards`;  //muestro las cartas que se están mostrando en el momento
-
     });
 
     
@@ -61,7 +60,6 @@ const loadCharacters = async (actualPosition = initial, limit = loadCards, first
         );
 
         //Se almacena la información (nombre, tipo, experiencia y sprites) de pokemonData en pokemones
-        console.log(pokemonData);
         pokemones = pokemonData.map((pokemon) => ({
                 name: pokemon.name,
                 sprites: pokemon.sprites,
@@ -122,7 +120,7 @@ async function seleccionFiltro(type){
         break;
         case 'Air':
             //Filtro el tipo
-            const filterTwo = await pokemones.filter(pokemones => pokemones.types.includes('flying'));
+            const filterTwo = await misPokemones.filter(pokemones => pokemones.types.includes('flying'));
             //Refresco localstorage
             localStorage.setItem("pokemones", JSON.stringify(filterTwo));
             //Refresco HTML
@@ -130,10 +128,21 @@ async function seleccionFiltro(type){
 
         break;
         case 'Fire':
-            console.log('Soy Fire')
+            //Filtro el tipo
+            const filterThree = await misPokemones.filter(pokemones => pokemones.types.includes('fire'));
+            //Refresco localstorage
+            localStorage.setItem("pokemones", JSON.stringify(filterThree));
+            //Refresco HTML
+            await showFirstLoad(filterThree);
+
         break;
         case 'Water':
-            console.log('Soy Water')
+            //Filtro el tipo
+            const filterFour = await misPokemones.filter(pokemones => pokemones.types.includes('water'));
+            //Refresco localstorage
+            localStorage.setItem("pokemones", JSON.stringify(filterFour));
+            //Refresco HTML
+            await showFirstLoad(filterFour);
         break;
         
     }
